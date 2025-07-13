@@ -1,0 +1,187 @@
+body {
+    background-color: #0d0d0d;
+    color: white;
+    margin: 0;
+    padding-bottom: 80px; /* Ensure content isn't hidden by the fixed navbar */
+}
+
+/* Bottom navbar container */
+.bottom-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a1a1a;
+    border-radius: 30px;
+    padding: 10px 18px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    flex-wrap: nowrap;
+    max-width: clamp(260px, 80vw, 360px); /* Only this! */
+    box-sizing: border-box;
+}
+
+
+
+/* Expand slightly on hover (desktop only) */
+@media (min-width: 768px) {
+    .bottom-nav:hover {
+        padding: 14px 24px; /* Adjusted hover padding */
+        gap: 18px; /* Adjusted hover gap */
+        background-color: #222;
+    }
+}
+
+/* Icon links */
+.bottom-nav a {
+    position: relative;
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Circle background effect */
+.bottom-nav a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.bottom-nav a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.bottom-nav a:hover {
+    color: #00ffff;
+}
+
+/* Divider styling */
+.bottom-nav .divider {
+    height: 24px;
+    width: 1px;
+    background-color: #333;
+    margin: 0 6px; /* Significantly reduced margin for dividers */
+    flex-shrink: 0;
+}
+
+/* Toggle theme */
+.toggle-theme {
+    cursor: pointer;
+}
+
+/* ---------- MOBILE RESPONSIVENESS (Gap and Divider Margin Adjustments) ---------- */
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 767.98px) {
+    .bottom-nav {
+        padding: 8px 14px; /* Slightly reduced horizontal padding */
+        gap: 12px; /* Reduced gap for tablets */
+        max-width: 95vw;
+        border-radius: 28px;
+    }
+
+    .bottom-nav a {
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+
+    .bottom-nav a::before {
+        width: 36px;
+        height: 36px;
+    }
+
+    .bottom-nav .divider {
+        height: 22px;
+        margin: 0 5px; /* Reduced divider margin */
+    }
+}
+
+/* Small devices (landscape phones, 576px and down) */
+@media (max-width: 575.98px) {
+    .bottom-nav {
+        padding: 6px 10px; /* Reduced horizontal padding */
+        gap: 8px; /* Further reduced gap for landscape phones */
+        border-radius: 22px;
+    }
+
+    .bottom-nav a {
+        font-size: 1rem;
+        padding: 3px;
+    }
+
+    .bottom-nav a::before {
+        width: 30px;
+        height: 30px;
+    }
+
+    .bottom-nav .divider {
+        height: 18px;
+        margin: 0 4px; /* Further reduced divider margin */
+    }
+}
+
+/* Very small devices (portrait phones, less than 480px) */
+@media (max-width: 479.98px) {
+    .bottom-nav {
+        bottom: 10px;
+        padding: 5px 8px; /* Reduced horizontal padding */
+        gap: 6px; /* Even smaller gap for very compact screens */
+        border-radius: 20px;
+        max-width: 98vw;
+    }
+
+    .bottom-nav a {
+        font-size: 0.9rem;
+        padding: 3px;
+    }
+
+    .bottom-nav a::before {
+        width: 28px;
+        height: 28px;
+    }
+
+    .bottom-nav .divider {
+        height: 16px;
+        margin: 0 3px; /* Minimal divider margin */
+    }
+}
+
+/* Optional: Even tinier screens (e.g., iPhone 5/SE 1st Gen, 320px wide) */
+@media (max-width: 320px) {
+    .bottom-nav {
+        gap: 5px; /* Ultra-compact gap */
+        padding: 4px 6px; /* Ultra-compact padding */
+    }
+    .bottom-nav a {
+        font-size: 0.8rem;
+    }
+    .bottom-nav a::before {
+        width: 26px;
+        height: 26px;
+    }
+    .bottom-nav .divider {
+        margin: 0 2px; /* Smallest possible divider margin */
+        height: 14px;
+    }
+}

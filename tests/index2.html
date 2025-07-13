@@ -15,7 +15,31 @@
 </head>
 
 <body>
- 
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Liam's Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto me-2 gap-2 gap-lg-5" style="margin-left: auto; margin-right: 2%">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#intro">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutme">About me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- Intro -->
   <section id="intro" class="py-5">
@@ -24,15 +48,13 @@
         <h1 class="text-center display-6 display-md-4 home">
           Hello, I'm <span class="fw-bold">Liam</span>
         </h1>
-        <p id="typing-text" class="fw-medium lead homep">
+        <p class="fw-medium lead homep">
           A 16 year old who likes to Program Do Maths.
         </p>
         <div class="d-flex justify-content-center">
           <a href="#projects" class="btn btn-light rounded-pill shadow-sm btn-lg">View my work <i
-            class="fas fa-arrow-right ms-2"></i></a>
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
-        <!-- <button id="dark" class="btn btn-dark mt-4" onclick="dark()">Dark Mode</button>
-        <button id="light" class="btn btn-light mt-4" onclick="light()">Light Mode</button> -->
       </div>
     </div>
   </section>
@@ -40,19 +62,19 @@
   <!-- about me -->
   <section id="aboutme" class="py-5">
     <div class="container">
-      <h1 class="section-heading text-center mt-2 scroll-animate">About Me</h1>
+      <h1 class="section-heading text-center mt-2">About Me</h1>
       <div class="row mt-4 align-items-center">
         <div class="mt-4 col-md-4 text-center mb-4 mb-md-0">
-          <div class="d-flex justify-content-center scroll-animate">
+          <div class="d-flex justify-content-center">
             <img src="img/pfp.jpg" class="img-fluid rounded-circle mt-2 mx-auto d-block" alt="my photo"
             height="185" width="185" />
           </div>
         </div>
         <div class="col-12 col-md-8">
-          <p class="lead scroll-animate">
+          <p class="lead">
             Hi, I'm Hein Htet Kyaw Swar — but you can call me Liam. I'm a 16-year-old self-taught developer.
           </p>
-          <p class="scroll-animate">
+          <p>
             I started learning programming at 14, after an interesting Python coding video on YouTube caught my eye. It immediately
             sparked my interest, and I began my journey into development.
             
@@ -61,7 +83,7 @@
             build and grow as a developer. With this improved understanding, I now focus on practical projects and constantly
             developing my skills.
           </p>
-          <p class="scroll-animate">
+          <p>
             Outside of coding, I love playing sports — pretty much any sport, but football is definitely my favorite. I
             also enjoy
             exploring tech, learning new things, and collaborating on projects with other developers.
@@ -74,10 +96,10 @@
   <!-- skills -->
   <section class="py-5" id="skills">
     <div class="container">
-      <h1 class="section-heading text-center mt-2 scroll-animate">My Skills</h1>
+      <h1 class="section-heading text-center mt-2">My Skills</h1>
       <div class="row">
         <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
+          <div class="card p-4">
             <h5 class="card-title mb-3">
               <i class="fa-solid fa-code text-danger me-2"></i> HTML | CSS | JS
             </h5>
@@ -87,7 +109,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
+          <div class="card p-4">
             <h5 class="card-title mb-3">
               <i class="fa-brands fa-react text-primary me-2"></i> React
             </h5>
@@ -97,7 +119,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
+          <div class="card p-4">
             <h5 class="card-title d-flex align-items-center">
               <img
                 src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png"
@@ -110,7 +132,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
+          <div class="card p-4">
             <h5 class="card-title mb-3"><i class="fa-solid fa-c text-primary me-2"></i> C</h5>
             <div class="progress" style="height: 20px">
               <div class="progress-bar" style="width: 15%">15%</div>
@@ -123,10 +145,10 @@
   <!-- Projects -->
   <section class="py-5" id="projects">
     <div class="container">
-      <h1 class="section-heading text-center fw-bold scroll-animate">My Projects</h1>
+      <h1 class="section-heading text-center fw-bold">My Projects</h1>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <div class="col">
-          <div class="card h-100 scroll-animate">
+          <div class="card h-100">
             <img src="https://placehold.co/400x250/007bff/ffffff?text=Coming+Soon" alt=""
               class="card-img-top rounded-top-2" />
             <div class="card-body">
@@ -144,17 +166,17 @@
   <!-- Work and Education -->
   <section class="py-5" id="work">
     <div class="container">
-      <h1 class="text-center fw-bold section-heading scroll-animate">Work and Education</h1>
+      <h1 class="text-center fw-bold section-heading">Work and Education</h1>
       <div class="row">
         <div class="col-12 col-md-6 mb-4">
-          <h3 class="h4 mb-4 text-center scroll-animate">Work Experience</h3>
-          <div class="card p-4 mb-3 scroll-animate">
+          <h3 class="h4 mb-4 text-center">Work Experience</h3>
+          <div class="card p-4 mb-3">
             <h5 class="card-title">I'm 16 so no Jobs yet</h5>
           </div>
         </div>
         <div class="col-12 col-md-6 mb-4">
-          <h3 class="h4 mb-4 text-center scroll-animate">Education</h3>
-          <div class="card p-4 mb-3 scroll-animate">
+          <h3 class="h4 mb-4 text-center">Education</h3>
+          <div class="card p-4 mb-3">
             <img src="img/certificate.png" alt="" />
             <div class="card-body">
               <h5 class="h3 mt-2 card-title">Professional Web Developer</h5>
@@ -173,7 +195,7 @@
               </div>
             </div>
           </div>
-          <div class="card p-4 mb-3 scroll-animate">
+          <div class="card p-4 mb-3">
             <div class="card-body">
               <h5 class="h3 card-title text-center mb-2">Schools</h5>
               <ul class="card-text mt-3 h6">
@@ -231,22 +253,25 @@
       </div>
     </div>
   </section>
-  <div class="bottom-nav">
-    <a href="#intro"><i class="fas fa-home home"></i></a>
-    
-  
-    <div class="divider"></div>
-  
-    <a href="https://www.facebook.com/hein.h.swar.98"><i class="fa-brands fa-facebook facebook"></i></a>
-    <a href="https://github.com/Liam208"><i class="fab fa-github github"></i></a>
-    <a href="https://t.me/HHKS08"><i class="fa-brands fa-telegram telegram"></i></a>
-  
-    <div class="divider"></div>
-  
-    <a class="toggle-theme theme" id="theme-toggle"><i class="fas fa-moon" onclick="togglePageTheme()"></i></a>
-  </div>
-  
+  <!-- Footer -->
+
+  <footer class="footer text-center py-4 mt-5">
+    <div class="container">
+      <p>
+        &copy; <span id="current-year"></span> 2025 Liam. All rights reserved.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/hein.h.swar.98" target="_blank" aria-label="Facebook"><i
+            class="fa-brands fa-facebook facebook"></i></a>
+        <a href="
+          https://github.com/Liam208" target="_blank" aria-label="GitHub"><i class="fab fa-github github"></i></a>
+        <a href="
+          https://t.me/HHKS08" target="_blank" aria-label="telegram"><i class="fa-brands fa-telegram telegram"></i></a>
+      </div>
+    </div>
+  </footer>
   <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="js/index.js" defer></script>
 </body>
+
 </html>
