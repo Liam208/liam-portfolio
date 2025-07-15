@@ -1,8 +1,8 @@
 const body = document.body;
-let themeToggle; // Will be assigned inside DOMContentLoaded once element is available
+let themeToggle; 
 
 // --- Typing Animation Logic ---
-let typeInterval; // To hold the interval for typing/deleting
+let typeInterval;
 
 function initTypingAnimation() {
   const typingTextElement = document.getElementById("typing-text");
@@ -17,9 +17,7 @@ function initTypingAnimation() {
   function type() {
     const currentPhrase = phrases[phraseIndex];
     const displayedText = currentPhrase.substring(0, charIndex);
-
-    // --- KEY CHANGE HERE ---
-    // Update the innerHTML to include the typed text and the empty blinking cursor span
+    
     typingTextElement.innerHTML =
       staticPart + displayedText + '<span class="typing-cursor"></span>';
 
@@ -44,23 +42,21 @@ function initTypingAnimation() {
 }
 // --- End Typing Animation Logic ---
 
-// Function to set the theme based on the class
-// This function needs to be outside the DOMContentLoaded for onclick to find it
+
 function setTheme(mode) {
-  // Ensure themeToggle is defined before trying to use it
   if (!themeToggle) {
     themeToggle = document.getElementById("theme-toggle");
   }
 
-  const iconElement = themeToggle.querySelector("i"); // Get the icon element
+  const iconElement = themeToggle.querySelector("i");
 
   if (mode === "light") {
     body.classList.add("light-mode");
     iconElement.classList.remove("fa-moon");
     iconElement.classList.add("fa-sun");
-    localStorage.setItem("theme", "light"); // Fixed typo: setItem
+    localStorage.setItem("theme", "light");
   } else {
-    // mode is 'dark'
+  
     body.classList.remove("light-mode");
     iconElement.classList.remove("fa-sun");
     iconElement.classList.add("fa-moon");
@@ -68,13 +64,12 @@ function setTheme(mode) {
   }
 }
 
-// New global function to be called by onclick
 function togglePageTheme() {
-  // Ensure body is properly referenced
+
   if (body.classList.contains("light-mode")) {
-    setTheme("dark"); // If currently light, switch to dark
+    setTheme("dark");
   } else {
-    setTheme("light"); // If currently dark, switch to light
+    setTheme("light");
   }
 }
 
@@ -186,8 +181,6 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(element);
   });
   // Initialize the typing animation
-  // You might want to delay this slightly if the intro section also has scroll-animate
-  // For example, if you want it to appear *after* the section fades in:
   const typingElement = document.getElementById("typing-text");
   if (typingElement && typingElement.classList.contains("scroll-animate")) {
     // If it's a scroll-animated element, start typing after it becomes visible
@@ -208,31 +201,3 @@ document.addEventListener("DOMContentLoaded", function () {
     initTypingAnimation();
   }
 });
-
-// Dark mode light mode
-
-// function light(){
-//     const allcard = document.querySelectorAll(".card")
-//     document.querySelector("body").style.backgroundColor = "#f8f9fa";
-//     document.querySelector("body").style.color = "#212529";
-//     document.querySelector("#intro").style.backgroundImage =
-//       "linear-gradient(145deg, #3D5DC2 20%, #647DCE 100%)";
-//     allcard.forEach(card => {
-//         card.style.background = "white"
-//         card.style.color = "black"
-//     })
-// }
-
-// function dark(){
-//     const darkcard = document.querySelectorAll(".card")
-//     document.querySelector("body").style.backgroundColor = "#171717";
-//     document.querySelector("body").style.color = "#e0e0e0";
-//     document.querySelector("#intro").style.backgroundImage =
-//       "linear-gradient(145deg, #1A2A6C 0%, #4A0E6E 100%)";
-//     darkcard.forEach(card => {
-//         card.style.backgroundImage =
-//           "linear-gradient(180deg, #202b3a 0%, #1a222e 100%)";
-//         card.style.color = "white"
-//     })
-// }
-

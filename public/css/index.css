@@ -1,401 +1,360 @@
-/* --- Base (Dark) Mode Styles --- */
-/* These are the default styles if no 'light-mode' class is present */
 .home,
 .homep {
-    color: white; /* */
+    color: white;
 }
 
-/* --- Scroll Animation Styles --- */
-/* Base style for elements that will animate on scroll */
 .scroll-animate {
-  opacity: 0; /* Start completely hidden */
-  transform: translateY(30px); /* Start 30px below its final position */
-  /* IMPORTANT: This transition property is what makes it smooth */
+  opacity: 0;
+  transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* State when the element is visible in the viewport (JavaScript adds this class) */
 .scroll-animate.is-visible {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Move to its original position */
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* --- Blinking Cursor for Typing Animation --- */
-/* --- Blinking Cursor for Typing Animation --- */
 .typing-cursor {
-  display: inline-block; /* Essential to give it width/height */
-  width: 2px; /* Thickness of the cursor */
-  height: 1em; /* Height of the cursor, matches current font size */
-  background-color: white; /* Default (dark mode) cursor color */
-  margin-left: 3px; /* Small space between text and cursor */
-  vertical-align: middle; /* Align with text baseline */
-  animation: blink 0.7s infinite steps(1); /* Blinking animation */
-  /* Add this for safety, ensuring no content pushes it to a new line */
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: white;
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blink 0.7s infinite steps(1);
   overflow: hidden;
 }
 
-/* Light mode cursor color */
 body.light-mode .typing-cursor {
-  background-color: black; /* Cursor color in light mode */
+  background-color: black;
 }
 
-/* Keyframes for the blinking animation */
 @keyframes blink {
-  0% { opacity: 1; }   /* Fully visible */
-  50% { opacity: 0; }  /* Fully transparent */
-  100% { opacity: 1; } /* Back to visible */
+  0% { opacity: 1; }   
+  50% { opacity: 0; }  
+  100% { opacity: 1; } 
 }
 
 body {
-    background-color: #171717; /* */
-    color: #e0e0e0; /* Very light gray for body text */
-    margin: 0; /* */
-    padding-bottom: 80px; /* */
-    /* Add transitions for smooth theme change */
-    transition: background-color 0.4s ease, color 0.4s ease; /* */
+    background-color: #171717;
+    color: #e0e0e0;
+    margin: 0;
+    padding-bottom: 80px;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 body.light-mode {
-    background-color: #f8f9fa; /* Light mode background */
-    color: #212529; /* Darker text color */
-    /* No need to repeat margin/padding-bottom unless they change in light mode */
+    background-color: #f8f9fa;
+    color: #212529;
 }
-
 
 #intro {
-    border-bottom-left-radius: 30px; /* */
-    border-bottom-right-radius: 30px; /* */
-    display: flex; /* */
-    align-items: center; /* */
-    background: linear-gradient(145deg, #1A2A6C 0%, #4A0E6E 100%); /* Default (Dark) intro background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* */
-    /* Add transitions for smooth theme change */
-    transition: background 0.4s ease, box-shadow 0.4s ease; /* */
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, #1A2A6C 0%, #4A0E6E 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
-body.light-mode #intro { /* Correctly targets #intro when body has light-mode */
-    background: linear-gradient(145deg, #3D5DC2 20%, #647DCE 100%); /* Light intro background */
+body.light-mode #intro {
+    background: linear-gradient(145deg, #3D5DC2 20%, #647DCE 100%);
 }
 
 .section-heading {
-    position: relative; /* */
-    display: inline-block; /* */
-    margin-bottom: 1rem; /* */
-    transition: color 0.4s ease; /* Smooth transition for text color if it changes */
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    transition: color 0.4s ease;
 }
 
 .section-heading::after {
-    content: ""; /* */
-    display: block; /* */
-    width: 80px; /* 👈 underline length */
-    height: 4px; /* 👈 underline thickness */
-    background-color: #3f51b5; /* 👈 underline color (Bootstrap primary blue) */
-    margin: 0 auto; /* */
-    margin-top: 8px; /* */
-    border-radius: 2px; /* */
-    transition: background-color 0.4s ease; /* Smooth transition */
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #3f51b5;
+    margin: 0 auto;
+    margin-top: 8px;
+    border-radius: 2px;
+    transition: background-color 0.4s ease;
 }
 
 body.light-mode .section-heading::after {
-    background-color: #007bff; /* Example: A different color for light mode underline */
+    background-color: #007bff;
 }
 
 .card {
-    border-radius: 15px; /* */
-    background: linear-gradient(180deg, #202b3a 0%, #1a222e 100%); /* Default (Dark) card background */
-    color: white; /* Default (Dark) card text color */
+    border-radius: 15px;
+    background: linear-gradient(180deg, #202b3a 0%, #1a222e 100%);
+    color: white;
 }
 
-body.light-mode .card { /* Correctly targets .card when body has light-mode */
-    background: white; /* Pure white background for cards in light mode */
-    color: black; /* Dark text for cards in light mode */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for definition in light mode */
+body.light-mode .card {
+    background: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .card:hover {
-    transform: translateY(-3px) scale(1.01); /* */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* */
-    transition: all 0.4s ease; /* Ensure this is also applied for smoothness */
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s ease;
 }
 
-
 .social-icons a {
-    color: white; /* */
-    margin: 0 10px; /* */
-    font-size: 1.5rem; /* */
-    transition: color 0.3s ease; /* */
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
 }
 
 .social-icons a:hover i {
-    transition: all 0.3s ease; /* */
-    transform: translateY(-3px) scale(1.01); /* */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* */
+    transition: all 0.3s ease;
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 .facebook:hover {
-    color: #1877F2; /* */
+    color: #1877F2;
 }
 .github:hover {
-    color: black; /* */
+    color: black;
 }
 .telegram:hover {
-    color: #24A1DE; /* */
+    color: #24A1DE;
 }
 
-
-
-/* Bottom navbar container - Base styles */
 .bottom-nav {
-    position: fixed; /* */
-    bottom: 20px; /* */
-    left: 50%; /* */
-    transform: translateX(-50%); /* */
-    background-color: #1a1a1a; /* */
-    border-radius: 30px; /* */
-    padding: 10px 18px; /* */
-    display: flex; /* */
-    gap: 13px; /* */
-    align-items: center; /* */
-    justify-content: center; /* */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* */
-    z-index: 1000; /* */
-    transition: all 0.3s ease; /* Add transition */
-    flex-wrap: nowrap; /* */
-    max-width: clamp(260px, 80vw, 360px); /* */
-    box-sizing: border-box; /* */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a1a1a;
+    border-radius: 30px;
+    padding: 10px 18px;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    flex-wrap: nowrap;
+    max-width: clamp(260px, 80vw, 360px);
+    box-sizing: border-box;
 }
 
-/* Expand slightly on hover (desktop only) */
 @media (min-width: 768px) {
     .bottom-nav:hover {
-        padding: 14px 24px; /* Adjusted hover padding */
-        gap: 15px; /* Adjusted hover gap */
-        background-color: #222; /* */
+        padding: 14px 24px;
+        gap: 15px;
+        background-color: #222;
     }
 }
 
-/* Icon links - Base styles */
 .bottom-nav a {
-    position: relative; /* */
-    color: white; /* */
-    font-size: 1.3rem; /* */
-    text-decoration: none; /* */
-    transition: color 0.3s ease, padding 0.3s ease; /* */
-    padding: 6px; /* */
-    display: flex; /* */
-    align-items: center; /* */
-    justify-content: center; /* */
-    flex-shrink: 0; /* */
+    position: relative;
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: color 0.3s ease, padding 0.3s ease;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-/* Circle background effect - Base styles */
 .bottom-nav a::before {
-    content: ''; /* */
-    position: absolute; /* */
-    top: 50%; /* */
-    left: 50%; /* */
-    width: 40px; /* */
-    height: 40px; /* */
-    background: rgba(255, 255, 255, 0.1); /* */
-    border-radius: 50%; /* */
-    transform: translate(-50%, -50%) scale(0); /* */
-    opacity: 0; /* */
-    transition: all 0.3s ease; /* */
-    z-index: -1; /* */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
 }
 
 .bottom-nav a:hover::before {
-    transform: translate(-50%, -50%) scale(1); /* */
-    opacity: 1; /* */
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
 }
 
-.bottom-nav a i{
+.bottom-nav a i {
   color: white;
   transition: color 0.3s ease;
 }
 body.light-mode .bottom-nav a i {
-  color: #555; /* Example: A darker gray for icons in light mode */
+  color: #555;
 }
 
 .facebook:hover {
-  color: #1877F2; /* */
+  color: #1877F2;
 }
 .github:hover {
-  color: black; /* */
+  color: black;
 }
 .telegram:hover {
-  color: #24A1DE; /* */
+  color: #24A1DE;
 }
-
 
 body.light-mode .bottom-nav .facebook:hover {
-  color: #1877F2; /* Example: A blue on hover in light mode */
+  color: #1877F2;
 }
-body.light-mode .bottom-nav .github:hover{
-  color: black; /* Example: A blue on hover in light mode */
+body.light-mode .bottom-nav .github:hover {
+  color: black;
 }
 body.light-mode .bottom-nav .telegram:hover {
-  color: #24A1DE; /* Example: A blue on hover in light mode */
+  color: #24A1DE;
 }
 
-
-
-/* Divider styling - Base styles */
 .bottom-nav .divider {
-    height: 24px; /* */
-    width: 1px; /* */
-    background-color: #333; /* */
-    margin: 0 6px; /* Significantly reduced margin for dividers */
-    flex-shrink: 0; /* */
+    height: 24px;
+    width: 1px;
+    background-color: #333;
+    margin: 0 6px;
+    flex-shrink: 0;
 }
 
-/* Toggle theme */
 .toggle-theme {
-    cursor: pointer; /* */
+    cursor: pointer;
 }
 
-/* --- Light Mode Styles --- */
-/* These styles will apply when the 'light-mode' class is added to the body */
 body.light-mode {
-    background-color: #f8f9fa; /* Lighter background */
-    color: #212529; /* Darker text color */
+    background-color: #f8f9fa;
+    color: #212529;
 }
 
 body.light-mode #intro {
-    background: linear-gradient(145deg, #3D5DC2 20%, #647DCE 100%); /* Light intro background */
+    background: linear-gradient(145deg, #3D5DC2 20%, #647DCE 100%);
 }
 
 body.light-mode .card {
-    background: white; /* Pure white background for cards in light mode */
-    color: black; /* Dark text for cards in light mode */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for definition in light mode */
+    background: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for the bottom navigation bar in light mode - ADDED/CONFIRMED */
 body.light-mode .bottom-nav {
-    background-color: #ffffff; /* White background for nav bar */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Lighter, subtle shadow */
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .bottom-nav a {
-    color: #555; /* Darker icon color for nav links */
+    color: #555;
 }
 
 body.light-mode .bottom-nav a::before {
-    background: rgba(0, 0, 0, 0.05); /* Lighter hover background */
+    background: rgba(0, 0, 0, 0.05);
 }
-
-
 
 body.light-mode .bottom-nav .divider {
-    background-color: #ccc; /* Lighter divider color */
+    background-color: #ccc;
 }
 
-
-/* --- MOBILE RESPONSIVENESS (Gap and Divider Margin Adjustments) --- */
-/* Your existing media queries for responsiveness. Make sure these also reflect light mode changes if needed */
-
-/* Medium devices (tablets, 768px and up) */
 @media (max-width: 767.98px) {
     .bottom-nav {
-        padding: 8px 14px; /* */
-        gap: 12px; /* */
-        max-width: 95vw; /* */
-        border-radius: 28px; /* */
+        padding: 8px 14px;
+        gap: 12px;
+        max-width: 95vw;
+        border-radius: 28px;
     }
     .bottom-nav a {
-        font-size: 1.2rem; /* */
-        padding: 5px; /* */
+        font-size: 1.2rem;
+        padding: 5px;
     }
     .bottom-nav a::before {
-        width: 36px; /* */
-        height: 36px; /* */
+        width: 36px;
+        height: 36px;
     }
     .bottom-nav .divider {
-        height: 22px; /* */
-        margin: 0 5px; /* */
+        height: 22px;
+        margin: 0 5px;
     }
 }
 
-/* Small devices (landscape phones, 576px and down) */
 @media (max-width: 575.98px) {
     .bottom-nav {
-        padding: 6px 10px; /* */
-        gap: 8px; /* */
-        border-radius: 22px; /* */
+        padding: 6px 10px;
+        gap: 8px;
+        border-radius: 22px;
     }
     .bottom-nav a {
-        font-size: 1rem; /* */
-        padding: 3px; /* */
+        font-size: 1rem;
+        padding: 3px;
     }
     .bottom-nav a::before {
-        width: 30px; /* */
-        height: 30px; /* */
+        width: 30px;
+        height: 30px;
     }
     .bottom-nav .divider {
-        height: 18px; /* */
-        margin: 0 4px; /* */
+        height: 18px;
+        margin: 0 4px;
     }
 }
 
-/* Very small devices (portrait phones, less than 480px) */
 @media (max-width: 479.98px) {
     .bottom-nav {
-        bottom: 10px; /* */
-        padding: 5px 8px; /* */
-        gap: 6px; /* */
-        border-radius: 20px; /* */
-        max-width: 98vw; /* */
+        bottom: 10px;
+        padding: 5px 8px;
+        gap: 6px;
+        border-radius: 20px;
+        max-width: 98vw;
     }
     .bottom-nav a {
-        font-size: 0.9rem; /* */
-        padding: 3px; /* */
+        font-size: 0.9rem;
+        padding: 3px;
     }
     .bottom-nav a::before {
-        width: 28px; /* */
-        height: 28px; /* */
+        width: 28px;
+        height: 28px;
     }
     .bottom-nav .divider {
-        height: 16px; /* */
-        margin: 0 3px; /* */
+        height: 16px;
+        margin: 0 3px;
     }
 }
 
-/* Optional: Even tinier screens (e.g., iPhone 5/SE 1st Gen, 320px wide) */
 @media (max-width: 320px) {
     .bottom-nav {
-        gap: 5px; /* */
-        padding: 4px 6px; /* */
+        gap: 5px;
+        padding: 4px 6px;
     }
     .bottom-nav a {
-        font-size: 0.8rem; /* */
+        font-size: 0.8rem;
     }
     .bottom-nav a::before {
-        width: 26px; /* */
-        height: 26px; /* */
+        width: 26px;
+        height: 26px;
     }
     .bottom-nav .divider {
-        margin: 0 2px; /* */
-        height: 14px; /* */
+        margin: 0 2px;
+        height: 14px;
     }
 }
 
 @media (max-width: 420px) {
     .bottom-nav {
-        max-width: 92vw; /* */
-        padding: 14px 20px; /* */
-        border-radius: 24px; /* */
+        max-width: 92vw;
+        padding: 14px 20px;
+        border-radius: 24px;
     }
     .bottom-nav a {
-        font-size: 1.25rem; /* */
-        padding: 6px; /* */
+        font-size: 1.25rem;
+        padding: 6px;
     }
     .bottom-nav a::before {
-        width: 34px; /* */
-        height: 34px; /* */
+        width: 34px;
+        height: 34px;
     }
     .bottom-nav .divider {
-        height: 20px; /* */
-        margin: 0 5px; /* */
+        height: 20px;
+        margin: 0 5px;
     }
 }
