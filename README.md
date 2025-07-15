@@ -59,7 +59,6 @@ Here's what powers this portfolio:
 ## More to come
 
 * **Responsive Fixes:** Right now on some devices the Navbar can be small or big I will fix that later on.
-* **Contact me form:** The form is currently in developement but it will come in the next update.
 * **Projects:** Haven't made my projects public yet but it will be added later on.
 
 # Thank you for visiting my website

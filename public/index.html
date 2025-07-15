@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="css/index.css" />
   <link rel="icon" type="image/png" href="img/logo.png" />
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
 </head>
 
 <body>
@@ -209,8 +211,8 @@
   <section class="py-5" id="contact">
     <div class="container">
       <h3 class="text-center fw-bold section-heading">Get in touch</h3>
-      <div class="alert alert-warning text-center fw-semibold" role="alert">
-        This form is currently inactive – still under development.
+      <div class="alert alert-success text-center fw-semibold d-none" id="alert-message" role="alert">
+        Message has been sent
       </div>
       <div class="row justify-content-center">
         <div class="col-lg-8 px-3 px-sm-5">
@@ -218,26 +220,26 @@
             Do you have a question or want to work with me? Feel free to reach
             out
           </p>
-          <form class="disabled-form">
+          <form class="contact-form" id="contact-form">
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" disabled />
+              <input type="text" class="form-control" id="name" name="from_name" />
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" disabled />
+              <input type="email" class="form-control" id="email" name="from_email"/>
             </div>
             <div class="mb-3">
               <label for="subject" class="form-label">Subject</label>
-              <input type="text" class="form-control" id="subject" disabled />
+              <input type="text" class="form-control" id="subject" name="subject" />
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Message</label>
               <textarea class="form-control" id="message" rows="5" placeholder="Your message here..." required
-                disabled></textarea>
+              name="message"></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary" disabled>
+              <button type="submit" class="btn btn-primary">
                 Send Message <i class="fas fa-paper-plane ms-2"></i>
               </button>
             </div>
@@ -263,5 +265,40 @@
   
   <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="js/index.js" defer></script>
+  <script>
+    function showAlert(message, type = "success", duration = 3000) {
+        const alertBox = document.getElementById("alert-message");
+
+        alertBox.className = `alert alert-${type} text-center fw-semibold fade`;
+        alertBox.textContent = message;
+
+
+        alertBox.classList.remove("d-none");
+        void alertBox.offsetWidth; 
+        alertBox.classList.add("show");
+
+        setTimeout(() => {
+          alertBox.classList.remove("show");
+          alertBox.addEventListener("transitionend", () => {
+            alertBox.classList.add("d-none");
+          }, { once: true });
+        }, duration);
+      }
+
+
+    emailjs.init("B9PnVKjNtaABzXx9A")
+    document.getElementById("contact-form").addEventListener("submit",function(e) {
+      e.preventDefault();
+      emailjs.sendForm("service_mfzzk3d", "template_i94gpm7", this)
+      .then(() => {
+        showAlert("Message has been sent ✅", "success", 3000);
+        this.reset()
+      }, (err) => {
+        alert("Failed to send message. ")
+        console.error(err)
+      }
+    )
+    })
+  </script>
 </body>
 </html>
