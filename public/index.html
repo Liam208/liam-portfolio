@@ -1,305 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Liam's Portfolio — 16-year-old self-taught developer skilled in HTML, CSS, JavaScript, React, Python, and more. Check out my projects and contact me."
+    />
+    <meta name="author" content="Liam" />
+    <meta
+      name="google-site-verification"
+      content="_ia-t4rRFXlUKmH-Td_pEgxarjNKqv3YPbEXasm312U"
+    />
+    <title>Liam's Portfolio</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="icons/css/all.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="icon" type="image/png" href="img/logo.png" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to Liam's Portfolio">
-  <meta name="author" content="Liam">
-  <meta name="google-site-verification" content="_ia-t4rRFXlUKmH-Td_pEgxarjNKqv3YPbEXasm312U" />
-  <title>Liam's Portfolio</title>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="icons/css/all.min.css">
-  <link rel="stylesheet" href="css/index.css" />
-  <link rel="icon" type="image/png" href="img/logo.png" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+  </head>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-</head>
-
-<body>
- 
-
-  <!-- Intro -->
-  <section id="intro" class="py-5">
-    <div class="container">
-      <div class="text-section mx-auto my-5 text-center" style="max-width: 700px">
-        <h1 class="text-center display-6 display-md-4 home">
-          Hello, I'm <span class="fw-bold">Liam</span>
-        </h1>
-        <p id="typing-text" class="fw-medium lead homep">
-          A 16 year old who likes to Program Do Maths.
-        </p>
-        <div class="d-flex justify-content-center">
-          <a href="#projects" class="btn btn-light rounded-pill shadow-sm btn-lg">View my work <i
-            class="fas fa-arrow-right ms-2"></i></a>
-        </div>
-        <!-- <button id="dark" class="btn btn-dark mt-4" onclick="dark()">Dark Mode</button>
+  <body>
+    <!-- Intro -->
+    <section id="intro" class="py-5">
+      <div class="container">
+        <div
+          class="text-section mx-auto my-5 text-center"
+          style="max-width: 700px"
+        >
+          <h1 class="text-center display-6 display-md-4 home">
+            Hello, I'm <span class="fw-bold">Liam</span>
+          </h1>
+          <p id="typing-text" class="fw-medium lead homep">
+            A 16 year old who likes to Program Do Maths.
+          </p>
+          <div class="d-flex justify-content-center">
+            <a
+              href="#projects"
+              class="btn btn-light rounded-pill shadow-sm btn-lg"
+              >View my work <i class="fas fa-arrow-right ms-2"></i
+            ></a>
+          </div>
+          <!-- <button id="dark" class="btn btn-dark mt-4" onclick="dark()">Dark Mode</button>
         <button id="light" class="btn btn-light mt-4" onclick="light()">Light Mode</button> -->
-      </div>
-    </div>
-  </section>
-
-  <!-- about me -->
-  <section id="aboutme" class="py-5">
-    <div class="container">
-      <h1 class="section-heading text-center mt-2 scroll-animate">About Me</h1>
-      <div class="row mt-4 align-items-center">
-        <div class="mt-4 col-md-4 text-center mb-4 mb-md-0">
-          <div class="d-flex justify-content-center scroll-animate">
-            <img src="img/pfp.jpg" class="img-fluid rounded-circle mt-2 mx-auto d-block" alt="my photo" height="185" width="185" loading="lazy" />
-          </div>
-        </div>
-        <div class="col-12 col-md-8">
-          <p class="lead scroll-animate">
-            Hi, I'm Hein Htet Kyaw Swar — but you can call me Liam. I'm a 16-year-old self-taught developer.
-          </p>
-          <p class="scroll-animate">
-            I started learning programming at 14, after an interesting Python coding video on YouTube caught my eye. It immediately
-            sparked my interest, and I began my journey into development.
-            
-            My early years involved exploring many different tutorials and languages, including Python, JavaScript, and C++. This
-            hands-on experience was crucial; it helped me truly understand how to learn effectively and discover the best ways to
-            build and grow as a developer. With this improved understanding, I now focus on practical projects and constantly
-            developing my skills.
-          </p>
-          <p class="scroll-animate">
-            Outside of coding, I love playing sports — pretty much any sport, but football is definitely my favorite. I
-            also enjoy
-            exploring tech, learning new things, and collaborating on projects with other developers.
-          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- skills -->
-  <section class="py-5" id="skills">
-    <div class="container">
-      <h1 class="section-heading text-center mt-2 scroll-animate">My Skills</h1>
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
-            <h5 class="card-title mb-3">
-              <i class="fa-solid fa-code text-danger me-2"></i> HTML | CSS | JS
-            </h5>
-            <div class="progress" style="height: 20px">
-              <div class="progress-bar" style="width: 95%">95%</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
-            <h5 class="card-title mb-3">
-              <i class="fa-brands fa-react text-primary me-2"></i> React
-            </h5>
-            <div class="progress" style="height: 20px">
-              <div class="progress-bar" style="width: 58%">58%</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
-            <h5 class="card-title d-flex align-items-center">
+    <!-- about me -->
+    <section id="aboutme" class="py-5">
+      <div class="container">
+        <h1 class="section-heading text-center mt-2 scroll-animate">
+          About Me
+        </h1>
+        <div class="row mt-4 align-items-center">
+          <div class="mt-4 col-md-4 text-center mb-4 mb-md-0">
+            <div class="d-flex justify-content-center scroll-animate">
               <img
-                src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png"
-                alt="python" style="width: 25px;" class="me-2">
-              Python
-            </h5>
-            <div class="progress" style="height: 20px">
-              <div class="progress-bar" style="width: 80%">80%</div>
+                src="img/pfp.jpg"
+                class="img-fluid rounded-circle mt-2 mx-auto d-block"
+                alt="my photo"
+                height="185"
+                width="185"
+                loading="lazy"
+              />
             </div>
           </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
-            <h5 class="card-title mb-3"><i class="fa-solid fa-c text-primary me-2"></i> C</h5>
-            <div class="progress" style="height: 20px">
-              <div class="progress-bar" style="width: 15%">15%</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
-            <h5 class="card-title mb-3"><i class="fa-solid fa-database text-info me-2"></i>No SQL</h5>
-            <div class="progress" style="height: 20px">
-              <div class="progress-bar" style="width: 35%">35%</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card p-4 scroll-animate">
-            <h5 class="card-title mb-3"><i class="fa-brands fa-php text-info me-2" style="color: #8892be;"></i>PHP</h5>
-            <div class="progress" style="height: 20px">
-              <div class="progress-bar" style="width: 25%">25%</div>
-            </div>
+          <div class="col-12 col-md-8">
+            <p class="lead scroll-animate">
+              Hi, I'm Hein Htet Kyaw Swar — but you can call me Liam. I'm a
+              16-year-old self-taught developer.
+            </p>
+            <p class="scroll-animate">
+              I started learning programming at 14, after an interesting Python
+              coding video on YouTube caught my eye. It immediately sparked my
+              interest, and I began my journey into development. My early years
+              involved exploring many different tutorials and languages,
+              including Python, JavaScript, and C++. This hands-on experience
+              was crucial; it helped me truly understand how to learn
+              effectively and discover the best ways to build and grow as a
+              developer. With this improved understanding, I now focus on
+              practical projects and constantly developing my skills.
+            </p>
+            <p class="scroll-animate">
+              Outside of coding, I love playing sports — pretty much any sport,
+              but football is definitely my favorite. I also enjoy exploring
+              tech, learning new things, and collaborating on projects with
+              other developers.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Projects -->
-  <section class="py-5" id="projects">
-    <div class="container">
-      <h1 class="section-heading text-center fw-bold scroll-animate">My Projects</h1>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div class="col">
-          <div class="card h-100 scroll-animate">
-            <img src="https://placehold.co/400x250/007bff/ffffff?text=Coming+Soon" alt=""
-              class="card-img-top rounded-top-2" loading="lazy" />
-            <div class="card-body">
-              <h5 class="card-title">Coming Soon</h5>
-              <p class="card-text">
-                Coming Soon
-              </p>
-              <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Coming Soon</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Work and Education -->
-  <section class="py-5" id="work">
-    <div class="container">
-      <h1 class="text-center fw-bold section-heading scroll-animate">Work and Education</h1>
-      <div class="row">
-        <div class="col-12 col-md-6 mb-4">
-          <h3 class="h4 mb-4 text-center scroll-animate">Work Experience</h3>
-          <div class="card p-4 mb-3 scroll-animate">
-            <h5 class="card-title">I'm 16 so no Jobs yet</h5>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 mb-4">
-          <h3 class="h4 mb-4 text-center scroll-animate">Education</h3>
-          <div class="card p-4 mb-3 scroll-animate">
-            <img src="img/certificate.png" alt="" loading="lazy"/>
-            <div class="card-body">
-              <h5 class="h3 mt-2 card-title">Professional Web Developer</h5>
-              <h6 class="card-subtitle mt-1">
-                Fairway Technology | June 25, 2025
-              </h6>
-              <div class="card-text">
-                <ul>
-                  <li>HTML | CSS | JS</li>
-                  <li>BootStrap</li>
-                  <li>PHP</li>
-                  <li>MySQL</li>
-                  <li>Laravel</li>
-                  <li>API</li>
-                </ul>
+    </section>
+
+    <!-- skills -->
+    <section class="py-5" id="skills">
+      <div class="container">
+        <h1 class="section-heading text-center mt-2 scroll-animate">
+          My Skills
+        </h1>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card p-4 scroll-animate">
+              <h5 class="card-title mb-3">
+                <i class="fa-solid fa-code text-danger me-2"></i> HTML | CSS |
+                JS
+              </h5>
+              <div class="progress" style="height: 20px">
+                <div class="progress-bar" style="width: 95%">95%</div>
               </div>
             </div>
           </div>
-          <div class="card p-4 mb-3 scroll-animate">
-            <div class="card-body">
-              <h5 class="h3 card-title text-center mb-2">Schools</h5>
-              <ul class="card-text mt-3 h6">
-                <li>
-                  Passed Grade 9 in No.1 Basic Education High School Dagon |
-                  BEHS 1 Dagon
-                </li>
-                <li class="mt-2">Currently learning GED</li>
-              </ul>
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card p-4 scroll-animate">
+              <h5 class="card-title mb-3">
+                <i class="fa-brands fa-react text-primary me-2"></i> React
+              </h5>
+              <div class="progress" style="height: 20px">
+                <div class="progress-bar" style="width: 58%">58%</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card p-4 scroll-animate">
+              <h5 class="card-title d-flex align-items-center">
+                <img
+                  src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png"
+                  alt="python"
+                  style="width: 25px"
+                  class="me-2"
+                />
+                Python
+              </h5>
+              <div class="progress" style="height: 20px">
+                <div class="progress-bar" style="width: 80%">80%</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card p-4 scroll-animate">
+              <h5 class="card-title mb-3">
+                <i class="fa-solid fa-c text-primary me-2"></i> C
+              </h5>
+              <div class="progress" style="height: 20px">
+                <div class="progress-bar" style="width: 15%">15%</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card p-4 scroll-animate">
+              <h5 class="card-title mb-3">
+                <i class="fa-solid fa-database text-info me-2"></i>No SQL
+              </h5>
+              <div class="progress" style="height: 20px">
+                <div class="progress-bar" style="width: 35%">35%</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card p-4 scroll-animate">
+              <h5 class="card-title mb-3">
+                <i
+                  class="fa-brands fa-php text-info me-2"
+                  style="color: #8892be"
+                ></i
+                >PHP
+              </h5>
+              <div class="progress" style="height: 20px">
+                <div class="progress-bar" style="width: 25%">25%</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="py-5" id="contact">
-    <div class="container">
-      <h3 class="text-center fw-bold section-heading">Get in touch</h3>
-      <div class="alert alert-success text-center fw-semibold d-none" id="alert-message" role="alert">
-        Message has been sent
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-8 px-3 px-sm-5">
-          <p class="text-center mb-4">
-            Do you have a question or want to work with me? Feel free to reach
-            out
-          </p>
-          <form class="contact-form" id="contact-form">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="from_name" />
+    </section>
+    <!-- Projects -->
+    <section class="py-5" id="projects">
+      <div class="container">
+        <h1 class="section-heading text-center fw-bold scroll-animate">
+          My Projects
+        </h1>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card h-100 scroll-animate">
+              <img
+                src="https://placehold.co/400x250/ec4899/ffffff?text=Message"
+                alt=""
+                class="card-img-top rounded-top-2"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Message</h5>
+                <p class="card-text">
+                  An anonymous messenger app that lets you send messages via links. Here’s how it works: you write a message, and the app generates a link. Send this link to your friends or other people VIA them, not directly to the person you want to reach. A tutorial is available on the website. <p class="text-danger">Please note: the site is hosted on a free service, so it only runs when a user sends a request to the server. You may need to wait a bit before it becomes ready to use.</p>
+                </p>
+                <a href="https://message-liam.onrender.com/" class="btn btn-outline-primary btn-md rounded-pill" target="_blank"
+                  >Message <i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                >
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="from_email"/>
+          </div>
+          <div class="col">
+            <div class="card h-100 scroll-animate">
+              <img
+                src="https://placehold.co/400x250/007bff/ffffff?text=Coming+Soon"
+                alt=""
+                class="card-img-top rounded-top-2"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Coming Soon</h5>
+                <p class="card-text">Coming Soon</p>
+                <a href="#" class="btn btn-outline-primary btn-md rounded-pill"
+                  >Coming Soon</a
+                >
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="subject" class="form-label">Subject</label>
-              <input type="text" class="form-control" id="subject" name="subject" />
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="5" placeholder="Your message here..." required
-              name="message"></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">
-                Send Message <i class="fas fa-paper-plane ms-2"></i>
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
+    </section>
+    <!-- Work and Education -->
+    <section class="py-5" id="work">
+      <div class="container">
+        <h1 class="text-center fw-bold section-heading scroll-animate">
+          Work and Education
+        </h1>
+        <div class="row">
+          <div class="col-12">
+            <div class="carousel slide mb-5" id="carouselExampleIndicators" data-bs-touch="true">
+              <div class="carousel-inner">
+                <div class="carousel-item">
+                  <div class="col-12 col-md-6 mb-4 mx-auto">
+                    <h3 class="h4 mb-4 text-center scroll-animate">
+                      Work Experience
+                    </h3>
+                  </div>
+                </div>
+                <div class="carousel-item active">
+                  <div class="col-12 col-md-6 mb-4 mx-auto">
+                    <h3 class="h4 mb-4 text-center scroll-animate">
+                      Education
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+                id="prevSlide"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+                id="nextSlide"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-12" id="noJobsCard">
+            <div class="card p-4 mb-3 scroll-animate">
+              <h5 class="card-title">I'm 16 so no Jobs yet</h5>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div
+              class="carousel slide cards-carousel d-none"
+              id="certificateCards" data-bs-ride="carousel" data-bs-interval="5000" data-bs-touch="true"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="col-12 col-md-6 mb-4 mx-auto">
+                    <div class="card p-4 mb-3 scroll-animate">
+                      <img src="img/certificate.png" alt="" loading="lazy" />
+                      <div class="card-body">
+                        <h5 class="h3 mt-2 card-title">
+                          Professional Web Developer I
+                        </h5>
+                        <h6 class="card-subtitle mt-1">
+                          Fairway Technology | June 25 2025
+                        </h6>
+                        <div class="card-text">
+                          <ul>
+                            <li>HTML | CSS | JS</li>
+                            <li>BootStrap</li>
+                            <li>PHP</li>
+                            <li>MySQL</li>
+                            <li>Laravel</li>
+                            <li>API</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-12 col-md-6 mb-4 mx-auto">
+                    <div class="card p-4 mb-3 scroll-animate">
+                      <img src="img/certificate2.jpg" alt="" loading="lazy" />
+                      <div class="card-body">
+                        <h5 class="h3 mt-2 card-title">
+                          Professional Web Developer II
+                        </h5>
+                        <h6 class="card-subtitle mt-1">
+                          Fairway Technology | Sep 23 2025
+                        </h6>
+                        <div class="card-text">
+                          <ul>
+                            <li>Web Standards</li>
+                            <li>Javascript</li>
+                            <li>React</li>
+                            <li>React Native</li>
+                            <li>Express</li>
+                            <li>SQLite</li>
+                            <li>Next JS</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-12 col-md-6 mb-4 mx-auto">
+                    <div class="card p-4 mb-3 scroll-animate">
+                      <div class="card-body">
+                        <h5 class="h3 card-title text-center mb-2">Schools</h5>
+                        <ul class="card-text mt-3 h6">
+                          <li>
+                            Passed Grade 9 in No.1 Basic Education High School
+                            Dagon | BEHS 1 Dagon
+                          </li>
+                          <li class="mt-2">Currently learning GED</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="carousel-control-prev d-none d-md-block"
+                type="button"
+                data-bs-target="#certificateCards"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next d-none d-md-block"
+                type="button"
+                data-bs-target="#certificateCards"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-5" id="contact">
+      <div class="container">
+        <h3 class="text-center fw-bold section-heading">Get in touch</h3>
+        <div
+          class="alert alert-success text-center fw-semibold d-none"
+          id="alert-message"
+          role="alert"
+        >
+          Message has been sent
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 px-3 px-sm-5">
+            <p class="text-center mb-4">
+              Do you have a question or want to work with me? Feel free to reach
+              out
+            </p>
+            <form class="contact-form" id="contact-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="from_name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="from_email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  name="subject"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Your message here..."
+                  required
+                  name="message"
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">
+                  Send Message <i class="fas fa-paper-plane ms-2"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bottom-nav">
+      <a href="#intro"><i class="fas fa-home home"></i></a>
+
+      <div class="divider"></div>
+
+      <a href="https://www.facebook.com/hein.h.swar.98"
+        ><i class="fa-brands fa-facebook facebook"></i
+      ></a>
+      <a href="https://github.com/Liam208"
+        ><i class="fab fa-github github"></i
+      ></a>
+      <a href="https://t.me/HHKS08"
+        ><i class="fa-brands fa-telegram telegram"></i
+      ></a>
+
+      <div class="divider"></div>
+
+      <a class="toggle-theme theme" id="theme-toggle"
+        ><i class="fas fa-moon" onclick="togglePageTheme()"></i
+      ></a>
     </div>
-  </section>
-  <div class="bottom-nav">
-    <a href="#intro"><i class="fas fa-home home"></i></a>
-    
-  
-    <div class="divider"></div>
-  
-    <a href="https://www.facebook.com/hein.h.swar.98"><i class="fa-brands fa-facebook facebook"></i></a>
-    <a href="https://github.com/Liam208"><i class="fab fa-github github"></i></a>
-    <a href="https://t.me/HHKS08"><i class="fa-brands fa-telegram telegram"></i></a>
-  
-    <div class="divider"></div>
-  
-    <a class="toggle-theme theme" id="theme-toggle"><i class="fas fa-moon" onclick="togglePageTheme()"></i></a>
-  </div>
-  
-  <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/index.js" defer></script>
-  <script>
-    function showAlert(message, type = "success", duration = 3000) {
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/index.js" defer></script>
+    <script>
+      function showAlert(message, type = "success", duration = 3000) {
         const alertBox = document.getElementById("alert-message");
 
         alertBox.className = `alert alert-${type} text-center fw-semibold fade`;
         alertBox.textContent = message;
 
-
         alertBox.classList.remove("d-none");
-        void alertBox.offsetWidth; 
+        void alertBox.offsetWidth;
         alertBox.classList.add("show");
 
         setTimeout(() => {
           alertBox.classList.remove("show");
-          alertBox.addEventListener("transitionend", () => {
-            alertBox.classList.add("d-none");
-          }, { once: true });
+          alertBox.addEventListener(
+            "transitionend",
+            () => {
+              alertBox.classList.add("d-none");
+            },
+            { once: true }
+          );
         }, duration);
       }
 
-
-    emailjs.init("B9PnVKjNtaABzXx9A")
-    document.getElementById("contact-form").addEventListener("submit",function(e) {
-      e.preventDefault();
-      emailjs.sendForm("service_mfzzk3d", "template_i94gpm7", this)
-      .then(() => {
-        showAlert("Message has been sent ✅", "success", 3000);
-        this.reset()
-      }, (err) => {
-        alert("Failed to send message. ")
-        console.error(err)
-      }
-    )
-    })
-  </script>
-</body>
+      emailjs.init("B9PnVKjNtaABzXx9A");
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          emailjs.sendForm("service_mfzzk3d", "template_i94gpm7", this).then(
+            () => {
+              showAlert("Message has been sent ✅", "success", 3000);
+              this.reset();
+            },
+            (err) => {
+              alert("Failed to send message. ");
+              console.error(err);
+            }
+          );
+        });
+    </script>
+  </body>
 </html>

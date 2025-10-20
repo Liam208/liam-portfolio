@@ -1,5 +1,5 @@
 const body = document.body;
-let themeToggle; 
+let themeToggle;
 
 // --- Typing Animation Logic ---
 let typeInterval;
@@ -17,7 +17,7 @@ function initTypingAnimation() {
   function type() {
     const currentPhrase = phrases[phraseIndex];
     const displayedText = currentPhrase.substring(0, charIndex);
-    
+
     typingTextElement.innerHTML =
       staticPart + displayedText + '<span class="typing-cursor"></span>';
 
@@ -42,7 +42,6 @@ function initTypingAnimation() {
 }
 // --- End Typing Animation Logic ---
 
-
 function setTheme(mode) {
   if (!themeToggle) {
     themeToggle = document.getElementById("theme-toggle");
@@ -56,16 +55,17 @@ function setTheme(mode) {
     iconElement.classList.add("fa-sun");
     localStorage.setItem("theme", "light");
   } else {
-  
     body.classList.remove("light-mode");
     iconElement.classList.remove("fa-sun");
     iconElement.classList.add("fa-moon");
     localStorage.setItem("theme", "dark");
   }
+
+  // 👇 ADD THIS LINE to automatically update the carousel theme
+  updateCarouselTheme();
 }
 
 function togglePageTheme() {
-
   if (body.classList.contains("light-mode")) {
     setTheme("dark");
   } else {
@@ -200,4 +200,75 @@ document.addEventListener("DOMContentLoaded", function () {
     // If not scroll-animated, start typing directly after DOMContentLoaded
     initTypingAnimation();
   }
+});
+
+// --- Functions to detect conditions ---
+function isMobile() {
+  return window.innerWidth < 768;
+}
+
+function isLightMode() {
+  return document.body.classList.contains("light-mode");
+}
+
+// --- Update carousel-dark for all visible carousels ---
+// --- Update carousel-dark for all visible carousels ---
+function updateCarouselTheme() {
+  // Select all carousels you want to affect
+  const carousels = document.querySelectorAll(".carousel");
+
+  carousels.forEach((carousel) => {
+    if (carousel.classList.contains("d-none")) return; // skip hidden ones
+
+    // We ONLY need the 'carousel-dark' class if the page is in light mode.
+    // If it's light mode, the carousel background is light, and we need
+    // dark controls (carousel-dark) for visibility.
+    // If it's dark mode, the carousel background is dark, and we want
+    // default light controls (no carousel-dark).
+    if (isLightMode()) {
+      carousel.classList.add("carousel-dark");
+    } else {
+      carousel.classList.remove("carousel-dark");
+    }
+  });
+}
+
+// --- Show/hide cards according to category ---
+function updateCardsDisplay() {
+  const activeCategory = document
+    .querySelector("#carouselExampleIndicators .carousel-item.active h3")
+    .textContent.toLowerCase();
+
+  // Handle "I'm 16 so no Jobs yet" card
+  const noJobsCard = document.querySelector("#noJobsCard");
+  if (activeCategory.includes("work")) {
+    noJobsCard.classList.remove("d-none");
+  } else {
+    noJobsCard.classList.add("d-none");
+  }
+
+  // Handle other cards carousels
+  const cardCarousels = document.querySelectorAll(".cards-carousel");
+  cardCarousels.forEach((carousel) => {
+    if (
+      activeCategory.includes("education") &&
+      carousel.id === "certificateCards"
+    ) {
+      carousel.classList.remove("d-none");
+    } else if (activeCategory.includes("work") && carousel.id === "workCards") {
+      carousel.classList.remove("d-none");
+    } else {
+      carousel.classList.add("d-none");
+    }
+  });
+
+  updateCarouselTheme(); // apply carousel-dark to all visible carousels
+}
+
+// --- Event listeners ---
+const categoryCarousel = document.getElementById("carouselExampleIndicators");
+categoryCarousel.addEventListener("slid.bs.carousel", updateCardsDisplay);
+window.addEventListener("resize", updateCarouselTheme);
+window.addEventListener("DOMContentLoaded", () => {
+  updateCardsDisplay();
 });
